@@ -1,0 +1,23 @@
+<!-- {% extends "base.html" %}
+
+{% block content %} -->
+<!doctype html>
+<html>
+    <head>
+        <title>Travel Companion</title>
+    </head>
+    <body>
+        <h3>Travel Companion</h3>
+    <form action="#" method="post">
+        <p>Destination : </p>
+        <p><input type="text" name="Destination"/></p>
+        <p><input type="submit" value="submit"/></p>
+        <ul>
+            {% for food in foods %} 
+            <li>{{food}}</li>
+            {% endfor %}
+        </ul>
+    </form>
+    </body>
+</html>
+<!-- {% endblock %} -->
