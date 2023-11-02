@@ -9,9 +9,11 @@ travel_comp_app = Flask(__name__)
 def home():
     # If method is post, using gpt_get to get the food list 
     if request.method == "POST":
-        foods = gpt_get(request.form["Destination"], "Tamilnadu")
+        common_phrases, common_phrases_eng, tourist_places, place_descs, foods, food_descs = gpt_get(request.form["Destination"])
         # Sending the foods list to the html
-        return render_template("Travel_companion_webpage.html", foods=foods)
+        return render_template("Travel_companion_webpage.html", common_phrases=common_phrases,
+                               common_phrases_eng=common_phrases_eng, tourist_places=tourist_places,
+                               place_descs=place_descs, foods=foods, food_descs=food_descs, )
     else:
         return render_template("Travel_companion_webpage.html")
 

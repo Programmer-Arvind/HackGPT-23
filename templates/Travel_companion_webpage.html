@@ -7,17 +7,40 @@
         <title>Travel Companion</title>
     </head>
     <body>
-        <h3>Travel Companion</h3>
+        <h1>Travel Companion</h1>
     <form action="#" method="post">
         <p>Destination : </p>
         <p><input type="text" name="Destination"/></p>
         <p><input type="submit" value="submit"/></p>
+        
+        {% if common_phrases %}
+        <h3>Must know phrases : </h3>
         <ul>
-            {% for food in foods %} 
-            <li>{{food}}</li>
+            {% for index in range(common_phrases|length) %} 
+            <li>{{common_phrases[index]}} - {{common_phrases_eng[index]}}</li>
             {% endfor %}
         </ul>
+        {% endif %}
+    
+        {% if tourist_places %}
+        <h3>Must visit places : </h3>
+        <ul>
+            {% for index in range(tourist_places|length) %} 
+            <li>{{tourist_places[index]}} - {{place_descs[index]}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if foods %}
+        <h3>Must taste</h3>
+        <ul>
+            {% for index in range(foods|length) %} 
+            <li>{{foods[index]}} : {{food_descs[index]}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </form>
+
     </body>
 </html>
 <!-- {% endblock %} -->
