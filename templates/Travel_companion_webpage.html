@@ -1,46 +1,57 @@
-<!-- {% extends "base.html" %}
-
-{% block content %} -->
 <!doctype html>
 <html>
     <head>
-        <title>Travel Companion</title>
+        <title>JourneyPal</title>
+        <link rel="icon" href="static/HackGPT-LOGO.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
     </head>
     <body>
-        <h1>Travel Companion</h1>
-    <form action="#" method="post">
-        <p>Destination : </p>
-        <p><input type="text" name="Destination"/></p>
-        <p><input type="submit" value="submit"/></p>
+        <h1 class="title"><img src="{{url_for('static', filename='HackGPT LOGO.png')}}" width="30rem" height="30rem">JourneyPal</h1>
         
-        {% if common_phrases %}
-        <h3>Must know phrases : </h3>
-        <ul>
-            {% for index in range(common_phrases|length) %} 
-            <li>{{common_phrases[index]}} - {{common_phrases_eng[index]}}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
     
-        {% if tourist_places %}
-        <h3>Must visit places : </h3>
-        <ul>
-            {% for index in range(tourist_places|length) %} 
-            <li>{{tourist_places[index]}} - {{place_descs[index]}}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        
-        {% if foods %}
-        <h3>Must taste</h3>
-        <ul>
-            {% for index in range(foods|length) %} 
-            <li>{{foods[index]}} : {{food_descs[index]}}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+    <form action="#" method="post">
+        <h3 class="question">Where do you want to Journey? </h3>
+        <p><input type="text" name="Destination" required/></p>
+        <p><input type="submit" class = "button" value="Journey"/></p>
     </form>
 
+    <div id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    {% if error %}
+    <h2>JourneyPal cannot help you with this Journey : Invalid place</h2>
+    {% endif %}
+
+    {% if common_phrases %}
+    <h3>Must know <strong>Phrases</strong></h3>
+    <ul>
+        {% for index in range(common_phrases|length) %} 
+        <li><strong>{{common_phrases[index]}}</strong> - {{common_phrases_eng[index]}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if tourist_places %}
+    <h3>Must visit Places</h3>
+    <ul>
+        {% for index in range(tourist_places|length) %} 
+        <li><strong>{{tourist_places[index]}}</strong> - {{place_descs[index]}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if foods %}
+    <h3>Must Taste</h3>
+    <ul>
+        {% for index in range(foods|length) %} 
+        <li><strong>{{foods[index]}}</strong> : {{food_descs[index]}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <footer>
+        Powered by GPT 3.5 Turbo (Free version)
+        It may make mistakes. Verify important information before making any decision.
+    </footer>
     </body>
 </html>
-<!-- {% endblock %} -->
