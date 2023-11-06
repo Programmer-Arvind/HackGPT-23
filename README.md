@@ -33,5 +33,8 @@ The webpage of this project is called JourneyPal
 ![alt Invalid output](https://github.com/Programmer-Arvind/HackGPT-23/blob/main/Screenshots/Invalid_place.png)
 ---
 **Note** : While running the program, make sure to make a text file named "hackGPT_api_key.txt" with your chat gpt API key.
+Also install the required packages namely:
+* flask
+* openai
 
 Thank you for checking out our project. Please let us know if you find any bugs or give suggestions. We are taking this project further and ready to improve.
