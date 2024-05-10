@@ -35,6 +35,6 @@ The webpage of this project is called JourneyPal
 **Note** : While running the program, make sure to make a text file named "hackGPT_api_key.txt" with your chat gpt API key.
 Also install the required packages namely:
 * flask
-* openai
+* openai (Due to newer updates you must install openai version 0.28.0 like pip install openai==0.28)
 
 Thank you for checking out our project. Please let us know if you find any bugs or give suggestions. We are taking this project further and ready to improve.
